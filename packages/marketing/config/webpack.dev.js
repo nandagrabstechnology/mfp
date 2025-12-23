@@ -1,5 +1,4 @@
 const {merge} = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commonConfig = require('./webpack.common');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const packageJson = require('../package.json');
@@ -29,10 +28,7 @@ const devConfig = {
                     requiredVersion: packageJson.dependencies['react-dom'],
                 },
             },
-        }),
-        new HtmlWebpackPlugin({
-            template: './public/index.html',
-        }),
+        })
     ],
     devtool: 'inline-source-map',
 };
